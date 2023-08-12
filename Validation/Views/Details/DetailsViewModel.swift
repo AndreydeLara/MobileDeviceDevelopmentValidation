@@ -26,8 +26,10 @@ extension DetailsViewModel {
             if let id = person.id,
                let name = person.name,
                let email = person.email,
-               let birthday = person.birthday {
-                self.person = .init(id: id, name: name, email: email, birthday: birthday)
+               let birthday = person.birthday,
+               let data = person.dataPhoto,
+               let photo = UIImage(data: data) {
+                self.person = .init(id: id, name: name, email: email, birthday: birthday, photo: photo)
             } else {
                 isAlertPresented = true
                 return

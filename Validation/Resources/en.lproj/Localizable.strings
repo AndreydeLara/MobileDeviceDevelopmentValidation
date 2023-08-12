@@ -9,6 +9,7 @@
 "Details" = "Details";
 "Edition" = "Edition";
 "Edit" = "Edit";
+"ChoosePhoto" = "Choose a photo";
 "ErrorInitializingDatabase" = "Error trying to initialize the database";
 "ErrorGettingDataFromDatabase" = "Error getting data from database";
 
@@ -21,5 +22,6 @@
 "ValidationError_EmailLocalPartLessThanThreeCharacters" = "The local part of the email needs to be longer than 3 characters";
 "ValidationError_BirthdayExceededToday" = "Birthday cannot exceed today";
 "ValidationError_InvalidBirthday" = "Invalid birthday date";
+"ValidationError_InvalidPhoto" = "Invalid photo";
 "ValidationError_FailToCreatePerson" = "Failed to register person";
 "ValidationError_Unknown" = "An unknown error has occurred";

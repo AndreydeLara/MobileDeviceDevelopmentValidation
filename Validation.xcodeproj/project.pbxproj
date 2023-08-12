@@ -21,6 +21,8 @@
 		85442FDE2A86497300F17749 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85442FDC2A86497300F17749 /* Localizable.strings */; };
 		85442FE12A86497D00F17749 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85442FDF2A86497D00F17749 /* Localizable.strings */; };
 		85442FE42A8649D400F17749 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85442FE32A8649D400F17749 /* String+Extension.swift */; };
+		854F640D2A88281400460E3D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F640C2A88281400460E3D /* ImagePicker.swift */; };
+		854F64102A882ADC00460E3D /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F640F2A882ADC00460E3D /* PersonCell.swift */; };
 		8578D7BF2A87CCE3006B21D8 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8578D7BD2A87CCE3006B21D8 /* DataBase.xcdatamodeld */; };
 		8578D7C32A87CE75006B21D8 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8578D7C22A87CE75006B21D8 /* CoreDataController.swift */; };
 		8578D7C62A87F001006B21D8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8578D7C52A87F001006B21D8 /* MainView.swift */; };
@@ -45,6 +47,8 @@
 		85442FDD2A86497300F17749 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = Localizable.strings; sourceTree = "<group>"; };
 		85442FE02A86497D00F17749 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		85442FE32A8649D400F17749 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		854F640C2A88281400460E3D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		854F640F2A882ADC00460E3D /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		8578D7BE2A87CCE3006B21D8 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		8578D7C22A87CE75006B21D8 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		8578D7C52A87F001006B21D8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		85442FB02A85AB5200F17749 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				854F640E2A882ACD00460E3D /* Entities */,
 				85442FE82A86571500F17749 /* Service */,
 				85442FE22A8649A400F17749 /* Extensions */,
 				85442FD52A86491700F17749 /* Resources */,
@@ -104,6 +109,7 @@
 		85442FBF2A85AC9800F17749 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				854F640B2A88280900460E3D /* ImagePicker */,
 				8578D7C42A87EFF2006B21D8 /* Main */,
 				85442FD02A85B1C500F17749 /* Details */,
 				85442FCB2A85B07C00F17749 /* Edition */,
@@ -210,6 +216,22 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		854F640B2A88280900460E3D /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				854F640C2A88281400460E3D /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		854F640E2A882ACD00460E3D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				854F640F2A882ADC00460E3D /* PersonCell.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		8578D7C42A87EFF2006B21D8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,7 +333,9 @@
 				8578D7CA2A87F795006B21D8 /* RegisterViewModel.swift in Sources */,
 				85442FCD2A85B08E00F17749 /* EditionView.swift in Sources */,
 				85442FE42A8649D400F17749 /* String+Extension.swift in Sources */,
+				854F640D2A88281400460E3D /* ImagePicker.swift in Sources */,
 				8578D7C32A87CE75006B21D8 /* CoreDataController.swift in Sources */,
+				854F64102A882ADC00460E3D /* PersonCell.swift in Sources */,
 				85442FD42A85B27700F17749 /* DetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,8 +492,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Validation/Preview Content\"";
+				DEVELOPMENT_TEAM = 58N84566KS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Nós precisamos do acesso a sua galeria para salvar a foto de perfil";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -496,8 +523,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Validation/Preview Content\"";
+				DEVELOPMENT_TEAM = 58N84566KS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Nós precisamos do acesso a sua galeria para salvar a foto de perfil";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

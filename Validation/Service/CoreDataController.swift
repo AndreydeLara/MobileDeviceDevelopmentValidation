@@ -7,6 +7,7 @@
 
 import CoreData
 import Foundation
+import SwiftUI
 
 final class CoreDataController: ObservableObject {
     
@@ -45,13 +46,17 @@ extension CoreDataController {
         return people
     }
     
-    func createPerson(name: String, email: String, birthday: Date) throws {
+    func createPerson(name: String, email: String, birthday: Date, photo: UIImage) throws {
         let person = Person(context: container.viewContext)
         
         person.id = UUID()
         person.name = name
         person.email = email
         person.birthday = birthday
+        
+        guard let dataPhoto = photo.pngData() else { throw ValidationError.failToCreatePerson }
+        
+        person.dataPhoto = dataPhoto
         
         try container.viewContext.save()
     }
@@ -62,11 +67,14 @@ extension CoreDataController {
         try container.viewContext.save()
     }
     
-    func editPerson(id: UUID, name: String, email: String, birthday: Date) throws {
+    func editPerson(id: UUID, name: String, email: String, birthday: Date, photo: UIImage) throws {
         let person = try fetchPerson(from: id)
+        
         person.name = name
         person.email = email
         person.birthday = birthday
+        person.dataPhoto = photo.pngData()
+        
         try container.viewContext.save()
     }
 }
@@ -113,6 +121,11 @@ extension CoreDataController {
         }
     }
     
+    static func checkPhoto(_ photo: UIImage?) throws -> UIImage {
+        guard let photo else { throw ValidationError.invalidPhoto }
+        return photo
+    }
+    
     enum ValidationError: Swift.Error {
         case emptyNameField
         case nameLessThanThreeCharacters
@@ -122,6 +135,7 @@ extension CoreDataController {
         case emailLocalPartLessThanThreeCharacters
         case birthdayExceededToday
         case invalidBirthday
+        case invalidPhoto
         case failToCreatePerson
         case unknown
         
@@ -143,6 +157,8 @@ extension CoreDataController {
                 return "ValidationError_BirthdayExceededToday".localized()
             case .invalidBirthday:
                 return "ValidationError_InvalidBirthday".localized()
+            case .invalidPhoto:
+                return "ValidationError_InvalidPhoto".localized()
             case .failToCreatePerson:
                 return "ValidationError_FailToCreatePerson".localized()
             case .unknown:

@@ -5,6 +5,7 @@
 //  Created by PremierSoft on 10/08/23.
 //
 
+import SwiftUI
 import Foundation
 
 @MainActor final class PeopleListViewModel: ObservableObject {
@@ -25,8 +26,10 @@ extension PeopleListViewModel {
                 if let id = person.id,
                    let name = person.name,
                    let email = person.email,
-                   let birthday = person.birthday {
-                    self.people.append(.init(id: id, name: name, email: email, birthday: birthday))
+                   let birthday = person.birthday,
+                   let data = person.dataPhoto,
+                   let photo = UIImage(data: data) {
+                    self.people.append(.init(id: id, name: name, email: email, birthday: birthday, photo: photo))
                 } else {
                     isAlertPresented = true
                     return
@@ -36,11 +39,4 @@ extension PeopleListViewModel {
             isAlertPresented = true
         }
     }
-}
-
-struct PersonCell: Identifiable {
-    var id: UUID
-    var name: String
-    var email: String
-    var birthday: Date
 }

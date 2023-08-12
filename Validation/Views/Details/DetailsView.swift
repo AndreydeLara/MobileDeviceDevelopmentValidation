@@ -21,66 +21,73 @@ struct DetailsView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Spacer()
-            
-            Group {
-                HStack(spacing: 0) {
-                    Text("Name".localized() + ": ")
-                        .font(.system(size: 20, weight: .bold))
-                    Text(viewModel.person.name)
-                        .font(.system(size: 20))
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 20) {
+                Spacer()
+                
+                Group {
+                    HStack(spacing: 0) {
+                        Text("Name".localized() + ": ")
+                            .font(.system(size: 20, weight: .bold))
+                        Text(viewModel.person.name)
+                            .font(.system(size: 20))
+                    }
+                    
+                    HStack(spacing: 0) {
+                        Text("Email".localized() + ": ")
+                            .font(.system(size: 20, weight: .bold))
+                        Text(viewModel.person.email)
+                            .font(.system(size: 20))
+                    }
+                    
+                    HStack(spacing: 0) {
+                        Text("Birthday".localized() + ": ")
+                            .font(.system(size: 20, weight: .bold))
+                        Text("\(formattedDate(viewModel.person.birthday))")
+                            .font(.system(size: 20))
+                    }
+                    
+                    Image(uiImage: viewModel.person.photo)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                        .clipped()
                 }
+                .padding(.horizontal, 20)
+                
+                Spacer()
                 
                 HStack(spacing: 0) {
-                    Text("Email".localized() + ": ")
-                        .font(.system(size: 20, weight: .bold))
-                    Text(viewModel.person.email)
-                        .font(.system(size: 20))
+                    Button {
+                        showEditionView.toggle()
+                    } label: {
+                        Text("Edit".localized())
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    Spacer()
+                    Button {
+                        viewModel.deletePerson(dismiss: dismiss)
+                    } label: {
+                        Text("Remove".localized())
+                            .padding()
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
                 }
-
-                HStack(spacing: 0) {
-                    Text("Birthday".localized() + ": ")
-                        .font(.system(size: 20, weight: .bold))
-                    Text("\(formattedDate(viewModel.person.birthday))")
-                        .font(.system(size: 20))
-                }
-            }
-            .padding(.horizontal, 20)
-            
-            Spacer()
-            
-            HStack(spacing: 0) {
-                Button {
-                    showEditionView.toggle()
-                } label: {
-                    Text("Edit".localized())
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
+                .padding(.horizontal, 60)
+                
                 Spacer()
-                Button {
-                    viewModel.deletePerson(dismiss: dismiss)
+                
+                NavigationLink(isActive: $showEditionView) {
+                    EditionView(viewModel: .init(person: viewModel.person))
                 } label: {
-                    Text("Remove".localized())
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+                    EmptyView()
                 }
             }
-            .padding(.horizontal, 60)
-            
-            Spacer()
-            
-            NavigationLink(isActive: $showEditionView) {
-                EditionView(viewModel: .init(person: viewModel.person))
-            } label: {
-                EmptyView()
-            }
-            
         }
         .frame(maxWidth: .infinity)
         .navigationTitle("Details".localized())

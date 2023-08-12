@@ -29,7 +29,8 @@ extension EditionViewModel {
                 id: person.id,
                 name: person.name,
                 email: person.email,
-                birthday: person.birthday
+                birthday: person.birthday,
+                photo: person.photo
             )
             
             shouldDismiss = true

@@ -9,6 +9,7 @@
 "Details" = "Detalhes";
 "Edition" = "Edição";
 "Edit" = "Editar";
+"ChoosePhoto" = "Escolha uma foto";
 "ErrorInitializingDatabase" = "Erro ao tentar inicializar o banco de dados";
 "ErrorGettingDataFromDatabase" = "Erro ao pegar dados do banco de dados";
 
@@ -21,5 +22,6 @@
 "ValidationError_EmailLocalPartLessThanThreeCharacters" = "A parte local do email precisa ser maior que 3 caracteres";
 "ValidationError_BirthdayExceededToday" = "A data de aniversário não pode exceder o dia de hoje";
 "ValidationError_InvalidBirthday" = "Data de aniversário inválida";
+"ValidationError_InvalidPhoto" = "Foto inválida";
 "ValidationError_FailToCreatePerson" = "Falha ao cadastrar pessoa";
 "ValidationError_Unknown" = "Ocorreu um erro desconhecido";
