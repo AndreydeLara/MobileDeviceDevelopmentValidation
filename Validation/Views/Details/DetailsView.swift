@@ -84,7 +84,7 @@ struct DetailsView: View {
         }
         .frame(maxWidth: .infinity)
         .navigationTitle("Details".localized())
-        .alert("Ocorreu um erro desconhecido", isPresented: $viewModel.isAlertPresented) {
+        .alert("ValidationError_Unknown".localized(), isPresented: $viewModel.isAlertPresented) {
             Button("OK", role: .cancel) { }
         }
         .onAppear { viewModel.fetchPerson() }

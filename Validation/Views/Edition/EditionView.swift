@@ -43,7 +43,7 @@ struct EditionView: View {
             Button {
                 viewModel.editPerson()
             } label: {
-                Text("Register".localized())
+                Text("Edit".localized())
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
@@ -57,7 +57,7 @@ struct EditionView: View {
             dismiss()
         }
         .alert(
-            viewModel.registerError?.description ?? "Ocorreu um problema",
+            viewModel.registerError?.description ?? "ValidationError_Unknown".localized(),
             isPresented: .constant(viewModel.registerError != nil)) {
                 Button("OK", role: .cancel) {
                     viewModel.registerError = nil

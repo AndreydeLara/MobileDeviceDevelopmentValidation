@@ -1,8 +1,25 @@
-"People" = "Gente";
+// MARK: - Views
+"People" = "Pesoas";
 "Register" = "Registro";
+"ToRegister" = "Registrar";
 "Name" = "Nombre";
 "Email" = "Correo electrónico";
-"Birthday" = "Cumpleaños";
-"Remove" = "Eliminar";
+"Birthday" = "Aniversário";
+"Remove" = "Agente de mudanzas";
 "Details" = "Detalles";
 "Edition" = "Edición";
+"Edit" = "Editar";
+"ErrorInitializingDatabase" = "Error al intentar inicializar el banco de datos";
+"ErrorGettingDataFromDatabase" = "Error al pegar dados del banco de dados";
+
+// MARK: - CoreDataController Errors
+"ValidationError_EmptyName" = "El nombre no puede estar vacío";
+"ValidationError_NameLessThanThreeCharacters" = "El nombre debe tener más de 3 caracteres";
+"ValidationError_EmptyEmail" = "El correo electrónico no puede estar vacío";
+"ValidationError_MustContainAtSign" = "El correo electrónico debe contener \"@\"";
+"ValidationError_MustContainDot" = "El correo electrónico debe contener \".\"";
+"ValidationError_EmailLocalPartLessThanThreeCharacters" = "La parte local del correo electrónico debe tener más de 3 caracteres";
+"ValidationError_BirthdayExceededToday" = "El cumpleaños no puede exceder hoy";
+"ValidationError_InvalidBirthday" = "Fecha de cumpleaños no válida";
+"ValidationError_FailToCreatePerson" = "Error al registrar a la persona";
+"ValidationError_Unknown" = "Un error desconocido a ocurrido";

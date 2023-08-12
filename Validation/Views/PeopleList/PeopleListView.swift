@@ -23,7 +23,7 @@ struct PeopleListView: View {
         .navigationTitle("People".localized())
         .navigationBarItems(trailing: registerButton)
         .onAppear { viewModel.fetchPeople() }
-        .alert("Erro ao pegar dados do banco de dados", isPresented: $viewModel.isAlertPresented) {
+        .alert("ErrorGettingDataFromDatabase".localized(), isPresented: $viewModel.isAlertPresented) {
             Button("OK", role: .cancel) { }
         }
     }
@@ -32,7 +32,7 @@ struct PeopleListView: View {
         NavigationLink {
             RegisterView()
         } label: {
-            Text("Register".localized())
+            Text("ToRegister".localized())
         }
     }
 }

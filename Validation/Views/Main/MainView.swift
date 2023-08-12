@@ -20,7 +20,7 @@ struct MainView: View {
         NavigationView {
             PeopleListView()
         }
-        .alert("Erro ao tentar inicializar o banco de dados", isPresented: $viewModel.isAlertPresented) {
+        .alert("ErrorInitializingDatabase".localized(), isPresented: $viewModel.isAlertPresented) {
             Button("OK", role: .cancel) { }
         }
     }

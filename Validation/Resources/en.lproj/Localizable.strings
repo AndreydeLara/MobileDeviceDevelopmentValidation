@@ -1,5 +1,7 @@
+// MARK: - Views
 "People" = "People";
 "Register" = "Register";
+"ToRegister" = "Register";
 "Name" = "Name";
 "Email" = "Email";
 "Birthday" = "Birthday";
@@ -7,3 +9,17 @@
 "Details" = "Details";
 "Edition" = "Edition";
 "Edit" = "Edit";
+"ErrorInitializingDatabase" = "Error trying to initialize the database";
+"ErrorGettingDataFromDatabase" = "Error getting data from database";
+
+// MARK: - CoreDataController Errors
+"ValidationError_EmptyName" = "Name cannot be empty";
+"ValidationError_NameLessThanThreeCharacters" = "Name must be longer than 3 characters";
+"ValidationError_EmptyEmail" = "Email cannot be empty";
+"ValidationError_MustContainAtSign" = "Email must contain \"@\"";
+"ValidationError_MustContainDot" = "The email must contain \".\"";
+"ValidationError_EmailLocalPartLessThanThreeCharacters" = "The local part of the email needs to be longer than 3 characters";
+"ValidationError_BirthdayExceededToday" = "Birthday cannot exceed today";
+"ValidationError_InvalidBirthday" = "Invalid birthday date";
+"ValidationError_FailToCreatePerson" = "Failed to register person";
+"ValidationError_Unknown" = "An unknown error has occurred";

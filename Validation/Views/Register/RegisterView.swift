@@ -43,7 +43,7 @@ struct RegisterView: View {
             Button {
                 viewModel.createPerson(name: name, email: email, birthday: birthday)
             } label: {
-                Text("Register".localized())
+                Text("ToRegister".localized())
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
@@ -57,7 +57,7 @@ struct RegisterView: View {
             dismiss()
         }
         .alert(
-            viewModel.registerError?.description ?? "Ocorreu um erro desconhecido",
+            viewModel.registerError?.description ?? "ValidationError_Unknown".localized(),
             isPresented: .constant(viewModel.registerError != nil)) {
             Button("OK", role: .cancel) {
                 viewModel.registerError = nil

@@ -128,25 +128,25 @@ extension CoreDataController {
         var description: String {
             switch self {
             case .emptyNameField:
-                return "Campo de nome vazio"
+                return "ValidationError_EmptyName".localized()
             case .nameLessThanThreeCharacters:
-                return "O nome precisa ser maior que 3 caracteres"
+                return "ValidationError_NameLessThanThreeCharacters".localized()
             case .emptyEmailField:
-                return "Campo de email vazio"
+                return "ValidationError_EmptyEmail".localized()
             case .mustContainAtSign:
-                return "O email deve conter \"@\""
+                return "ValidationError_MustContainAtSign".localized()
             case .mustContainDot:
-                return "O email deve conter \".\""
+                return "ValidationError_MustContainDot".localized()
             case .emailLocalPartLessThanThreeCharacters:
-                return "A parte local do email precisa ser maior que 3 caracteres"
+                return "ValidationError_EmailLocalPartLessThanThreeCharacters".localized()
             case .birthdayExceededToday:
-                return "A data de aniversário não pode exceder o dia de hoje"
+                return "ValidationError_BirthdayExceededToday".localized()
             case .invalidBirthday:
-                return "Data de aniversário inválida"
+                return "ValidationError_InvalidBirthday".localized()
             case .failToCreatePerson:
-                return "Falha ao cadastrar pessoa"
+                return "ValidationError_FailToCreatePerson".localized()
             case .unknown:
-                return "Ocorreu um erro desconhecido"
+                return "ValidationError_Unknown".localized()
             }
         }
     }
